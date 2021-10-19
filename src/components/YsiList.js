@@ -1,6 +1,5 @@
 import React from "react";
-import firebase from "/src/firebase/index"
-// 上変更 
+import db from "fireB/firestore"
  
 class YsiList extends React.Component {
   constructor(props) {
@@ -12,11 +11,23 @@ class YsiList extends React.Component {
   
   setClick = () => {
     var ysiName = document.getElementById("ystForm").elements["name"]["value"];
-    
+    db.collection("yasais").set({name: ysiName})
+      .then(function (docRef) {
+        alert("Document written with ID: ", docRef.id);
+      })
+      .catch(function (error) {
+        alert("Error adding document: ", error);
+      });
   }
  
   getClick = () => {
-    
+    let data = [];
+    db.collection('yasais').get().then(snapShot => {
+      snapShot.forEach(doc => {
+        data.push(doc.data());
+      });
+      this.setState({ ysiList: data });
+    });
   }
   
   render() {
@@ -24,7 +35,7 @@ class YsiList extends React.Component {
       <form id="ystForm">
         <label>
           Name:
-          <input type="text" name="name" value="" />
+          <input type="text" name="name" />
         </label>
       </form>
       <button onClick={this.setClick}>野菜設定</button>
