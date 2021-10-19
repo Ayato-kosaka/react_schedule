@@ -1,4 +1,4 @@
-import firebase from "./firebase";
+import firebase from "./index";
 
 // Firestoreのインスタンス作成
 export const db = firebase.firestore();

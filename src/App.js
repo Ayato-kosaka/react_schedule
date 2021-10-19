@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import YsiList from "./YsiList";
+import YsiList from "./components/YsiList";
 
 function App() {
   return (
