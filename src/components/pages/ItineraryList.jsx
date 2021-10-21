@@ -1,9 +1,11 @@
 import React from 'react';
+// import { db } from '../../fireB/firestore'
+import { Link } from 'react-router-dom'
 
 const ItineraryList = () => {
 
   // const getItinaries = () => {
-
+  //   const colRef = db.collection()
   // }
 
   return (
@@ -27,6 +29,8 @@ const ItineraryList = () => {
           </tr>
         </tbody>
       </table>
+
+      <Link to="/itineraries/new">しおりを作成</Link>
     </>
   );
 }

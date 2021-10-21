@@ -1,8 +1,9 @@
 import firebase from "fireB/firebase";
 
 // Firestoreのインスタンス作成
-const db = firebase.firestore();
-export default db;
+// const db = firebase.firestore();
+// export default db;
+export const db = firebase.firestore();
 // db.collection(…).doc(…).collection(…).doc(…)
 
 // let data = [];

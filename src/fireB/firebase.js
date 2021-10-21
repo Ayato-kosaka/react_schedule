@@ -17,4 +17,3 @@ export const firebaseConfig = {
 // Firebaseを紐付け、初期化
 firebase.initializeApp(firebaseConfig);
 export default firebase;
-
