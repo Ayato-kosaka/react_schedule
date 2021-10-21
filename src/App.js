@@ -1,5 +1,9 @@
 import React from 'react';
 import './App.css';
+import { Switch, Route } from 'react-router-dom'
+import Top from './components/pages/Top'
+import ItineraryList from './components/pages/ItineraryList'
+import NewItinary from './components/pages/NewItinerary'
 
 function App() {
   return (
